@@ -8,7 +8,6 @@
 </head>
 <body class="banner">
     <h1>Convertor Valută și Calculator Simplu</h1>
-
     <!-- Formular pentru convertorul de valută -->
     <form method="post">
         <br><br>
@@ -21,14 +20,7 @@
             <option value="EUR" {% if from_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
             <option value="CZK" {% if from_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
             <option value="CHF" {% if from_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-            <option value="BGN" {% if from_currency == 'BGN' %} selected {% endif %}>BGN-Bulgarian Lev</option>
-            <option value="ALL" {% if from_currency == 'ALL' %} selected {% endif %}>ALL-Albanian lek</option>
-            <option value="GBP" {% if from_currency == 'GBP' %} selected {% endif %}>GBP-Pound Sterling</option>
-            <option value="HUF" {% if from_currency == 'HUF' %} selected {% endif %}>HUF-Hungarian Forint</option>
-            <option value="JPY" {% if from_currency == 'JPY' %} selected {% endif %}>JPY-Japanese Yen</option>
-            <option value="ILS" {% if from_currency == 'ILS' %} selected {% endif %}>ILS-Shekel Israelit</option>
-            <option value="AUD" {% if from_currency == 'AUD' %} selected {% endif %}>AUD-Australian Dollar</option>
-            <!-- Alte valute pot fi adăugate aici -->
+           
         </select><br><br>
         <label>Selectați moneda de destinație:</label>
         <select name="to_currency">
@@ -37,14 +29,7 @@
             <option value="EUR" {% if to_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
             <option value="CZK" {% if to_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
             <option value="CHF" {% if to_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-            <option value="BGN" {% if to_currency == 'BGN' %} selected {% endif %}>BGN-Bulgarian Lev</option>
-            <option value="ALL" {% if to_currency == 'ALL' %} selected {% endif %}>ALL-Albanian lek</option>
-            <option value="GBP" {% if to_currency == 'GBP' %} selected {% endif %}>GBP-Pound Sterling</option>
-            <option value="HUF" {% if to_currency == 'HUF' %} selected {% endif %}>HUF-Hungarian Forint</option>
-            <option value="JPY" {% if to_currency == 'JPY' %} selected {% endif %}>JPY-Japanese Yen</option>
-            <option value="ILS" {% if to_currency == 'ILS' %} selected {% endif %}>ILS-Shekel Israelit</option>
-            <option value="AUD" {% if to_currency == 'AUD' %} selected {% endif %}>AUD-Australian Dollar</option>
-            <!-- Alte valute pot fi adăugate aici -->
+           
         </select><br><br>
         <button type="submit" name="convert_submit">Convertiți</button>
        
@@ -64,14 +49,6 @@
         <option value="EUR" {% if from_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
         <option value="CZK" {% if from_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
         <option value="CHF" {% if from_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-        <option value="BGN" {% if from_currency == 'BGN' %} selected {% endif %}>BGN-Bulgarian Lev</option>
-        <option value="ALL" {% if from_currency == 'ALL' %} selected {% endif %}>ALL-Albanian lek</option>
-        <option value="GBP" {% if from_currency == 'GBP' %} selected {% endif %}>GBP-Pound Sterling</option>
-        <option value="HUF" {% if from_currency == 'HUF' %} selected {% endif %}>HUF-Hungarian Forint</option>
-        <option value="JPY" {% if from_currency == 'JPY' %} selected {% endif %}>JPY-Japanese Yen</option>
-        <option value="ILS" {% if from_currency == 'ILS' %} selected {% endif %}>ILS-Shekel Israelit</option>
-        <option value="AUD" {% if from_currency == 'AUD' %} selected {% endif %}>AUD-Australian Dollar</option>
-        <!-- Alte valute pot fi adăugate aici -->
     </select><br><br>
     <label>Selectați moneda de destinație:</label>
     <select name="to_currency">
@@ -80,14 +57,7 @@
         <option value="EUR" {% if to_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
         <option value="CZK" {% if to_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
         <option value="CHF" {% if to_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-        <option value="BGN" {% if to_currency == 'BGN' %} selected {% endif %}>BGN-Bulgarian Lev</option>
-        <option value="ALL" {% if to_currency == 'ALL' %} selected {% endif %}>ALL-Albanian lek</option>
-        <option value="GBP" {% if to_currency == 'GBP' %} selected {% endif %}>GBP-Pound Sterling</option>
-        <option value="HUF" {% if to_currency == 'HUF' %} selected {% endif %}>HUF-Hungarian Forint</option>
-        <option value="JPY" {% if to_currency == 'JPY' %} selected {% endif %}>JPY-Japanese Yen</option>
-        <option value="ILS" {% if to_currency == 'ILS' %} selected {% endif %}>ILS-Shekel Israelit</option>
-        <option value="AUD" {% if to_currency == 'AUD' %} selected {% endif %}>AUD-Australian Dollar</option>
-        <!-- Alte valute pot fi adăugate aici -->
+       
     </select><br><br>
     <input type="number" step="0.01" name="alert_value" placeholder="Introduceți valoarea pentru alertă" required>
     <button type="submit" name="alert_submit">Setează alertă</button>
@@ -95,9 +65,6 @@
     {% if alert_message %}
     <p>{{ alert_message }}</p>
     {% endif %}
-
-
-    <!-- Formular pentru calculatorul simplu -->
     <form method="post">
         <h2>Calculator Simplu</h2>
         <input type="number" step="0.01" name="num1" placeholder="Introduceți primul număr" value="{{ request.form.num1 if request.form.num1 is defined else '' }}" required>
@@ -110,8 +77,7 @@
         </select>
         <input type="number" step="0.01" name="num2" placeholder="Introduceți al doilea număr" value="{{ request.form.num2 if request.form.num2 is defined else '' }}" required>
         <button type="submit" name="calc_submit">Calculează</button>
-    </form>
-    
+    </form>   
     {% if last_results %}
     <h3>Ultimele rezultate:</h3>
     <ul>
@@ -120,7 +86,5 @@
         {% endfor %}
     </ul>
     {% endif %} 
-
-   
 </body>
 </html>
