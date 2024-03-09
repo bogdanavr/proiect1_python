@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Convertor Valută și Calculator Simplu</title>
@@ -19,8 +18,7 @@
             <option value="USD" {% if from_currency == 'USD' %} selected {% endif %}>USD-US Dollar</option>
             <option value="EUR" {% if from_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
             <option value="CZK" {% if from_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
-            <option value="CHF" {% if from_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-           
+            <option value="CHF" {% if from_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>      
         </select><br><br>
         <label>Selectați moneda de destinație:</label>
         <select name="to_currency">
@@ -28,18 +26,14 @@
             <option value="USD" {% if to_currency == 'USD' %} selected {% endif %}>USD-US Dollar</option>
             <option value="EUR" {% if to_currency == 'EUR' %} selected {% endif %}>EUR-Euro</option>
             <option value="CZK" {% if to_currency == 'CZK' %} selected {% endif %}>CZK-Czech Koruna</option>
-            <option value="CHF" {% if to_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>
-           
+            <option value="CHF" {% if to_currency == 'CHF' %} selected {% endif %}>CHF-Swiss Franc</option>     
         </select><br><br>
-        <button type="submit" name="convert_submit">Convertiți</button>
-       
+        <button type="submit" name="convert_submit">Convertiți</button>      
     </form> 
     <!-- Afișează rezultatul pentru convertorul de valută -->
     {% if converted_amount %}
         <p>{{ amount }} {{ from_currency }} = {{ converted_amount }} {{ to_currency }}</p>
     {% endif %}
-
-
     <form method="post">
         <h2>Setare Alertă</h2>
     <label>Selectați moneda de plecare:</label>
